@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulce Glow 💖</title>
+  <style>
+    body {
+      font-family: 'Arial', cursive;
+      margin: 0;
+      padding: 0;
+      background: #ffe4e1;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ffb6c1, #ff69b4);
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ff69b4;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #ff1493;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ff69b4;
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .img-container img {
+      width: 250px;
+      border-radius: 15px;
+      border: 3px solid #ffb6c1;
+      transition: transform 0.3s;
+    }
+
+    .img-container img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #ff69b4;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1.5em;
+    }
+
+    canvas {
+      background: linear-gradient(180deg, #ffb6c1, #ffcce7);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff69b4;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #ffb6c1;
+      margin-top: 5px;
+      font-size: 1em;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ff69b4;
+      box-shadow: 0 0 5px #ff69b4;
+    }
+
+    .form-buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .btn {
+      background: #ff69b4;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dulce Glow 💖</h1>
+    <p>Mima tu piel, ama tu reflejo 🌸✨</p>
+  </header>
+
+  <nav>
+    <a onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a onclick="mostrarSeccion('rutinas')">Rutinas</a>
+    <a onclick="mostrarSeccion('mascarillas')">Mascarillas</a>
+    <a onclick="mostrarSeccion('tips')">Tips</a>
+    <a onclick="mostrarSeccion('juego')">Juego 🎮</a>
+    <a onclick="mostrarSeccion('formulario')">Formulario 💌</a>
+  </nav>
+
+  <section id="contenido">
+    <h2>Bienvenida ✨</h2>
+    <p>Elige una opción del menú para descubrir cómo cuidar tu piel y divertirte.</p>
+  </section>
+
+  <footer>
+    💕 Cuida tu piel, brilla siempre 💕
+  </footer>
+
+  <script>
+    function mostrarSeccion(seccion) {
+      const contenido = document.getElementById("contenido");
+
+      if (seccion === "inicio") {
+        contenido.innerHTML = `
+          <h2>Bienvenida ✨</h2>
+          <p>Elige una opción del menú para descubrir cómo cuidar tu piel y divertirte.</p>
+        `;
+      } 
+      else if (seccion === "rutinas") {
+        contenido.innerHTML = `
+          <h2>Rutinas Faciales 🌸</h2>
+          <p>TU PIEL ES TU CARTA DE PRESENTACIÓN: CUIDALA HOY, PARA BRILLAR MAÑANA</p>
+          <div class="img-container">
+            <img src="https://i.pinimg.com/736x/25/9f/cb/259fcb4f3bd544a8f206205e983a5bbd.jpg">
+            <img src="https://i.pinimg.com/736x/4c/03/6b/4c036bb03149093298da26e777d6c8c8.jpg">
+            <img src="https://i.pinimg.com/736x/3d/9b/5a/3d9b5aebfb03c311bfdee67ce43c02a6.jpg">
+          </div>
+        `;
+      } 
+      else if (seccion === "mascarillas") {
+        contenido.innerHTML = `
+          <h2>Mascarillas Caseras 💆‍♀️</h2>
+          <p>Prueba estas mascarillas naturales para hidratar, iluminar y limpiar tu piel.</p>
+          <div class="img-container">
+            <img src="https://i.pinimg.com/1200x/81/f0/9e/81f09e63b6df20640afac761dd6d393e.jpg">
+            <img src="https://i.pinimg.com/1200x/4f/01/b1/4f01b147145a4ae69f9b4a5055c9757e.jpg">
+            <img src="https://i.pinimg.com/736x/fe/b8/7e/feb87e760ba7e5303fa6373feac19906.jpg">
+          </div>
+        `;
+      } 
+      else if (seccion === "tips") {
+        contenido.innerHTML = `
+          <h2>Tips de Belleza ✨</h2>
+          <p>Consejitos rápidos para mantener tu piel siempre hermosa.</p>
+          <div class="img-container">
+            <img src="https://i.pinimg.com/1200x/58/4f/29/584f2983edcb3b1dc1a4560c1fb7db24.jpg">       
+            <img src="https://i.pinimg.com/736x/66/6b/4d/666b4d519a19678bc7013a1a23c61909.jpg">
+            <img src="https://i.pinimg.com/736x/6e/95/c5/6e95c5a09498536d1f604b1f1b8dcd45.jpg">
+          </div>
+        `;
+      } 
+      else if (seccion === "juego") {
+        contenido.innerHTML = `
+          <h2>Rosita Catch 💖</h2>
+          <canvas id="gameCanvas" width="400" height="500"></canvas>
+        `;
+        iniciarJuego();
+      }
+      else if (seccion === "formulario") {
+        contenido.innerHTML = `
+          <h2>Formulario de Registro 💌</h2>
+          <form>
+            <label>Nombre completo:</label>
+            <input type="text" placeholder="Tu nombre y apellido" required>
+            <label>Correo electrónico:</label>
+            <input type="email" placeholder="ejemplo@correo.com" required>
+            <label>Contraseña:</label>
+            <input type="password" placeholder="Crea una contraseña segura" required>
+            <label>Teléfono:</label>
+            <input type="tel" placeholder="Ej: +52 555 123 4567">
+            <label>Ciudad / País:</label>
+            <input type="text" placeholder="Tu ciudad o país">
+            <label>Intereses:</label>
+            <input type="checkbox"> Cuidado facial 💆‍♀️
+            <input type="checkbox"> Maquillaje 💄
+            <input type="checkbox"> Productos naturales 🌿
+            <input type="checkbox"> Rutinas diarias ☀️
+            <label>Mensaje o comentario:</label>
+            <textarea rows="4" placeholder="Cuéntanos algo sobre ti o tu piel..."></textarea>
+            <div class="form-buttons">
+              <button type="submit" class="btn">Registrarse</button>
+              <button type="button" class="btn">Iniciar sesión</button>
+            </div>
+          </form>
+        `;
+      }
+    }
+
+    // === JUEGO ROSITA CATCH ===
+    function iniciarJuego() {
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+      let basketX = 160;
+      const basketWidth = 80;
+      const basketHeight = 15;
+      let hearts = [];
+      let score = 0;
+
+      document.addEventListener("mousemove", e => {
+        const rect = canvas.getBoundingClientRect();
+        basketX = e.clientX - rect.left - basketWidth / 2;
+      });
+
+      function crearCorazon() {
+        hearts.push({ x: Math.random() * (canvas.width - 20), y: 0, size: 20 });
+      }
+
+      function dibujar() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#ff69b4";
+        ctx.fillRect(basketX, canvas.height - basketHeight - 10, basketWidth, basketHeight);
+
+        ctx.fillStyle = "#ff1493";
+        hearts.forEach((h, i) => {
+          ctx.beginPath();
+          ctx.arc(h.x, h.y, h.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+          h.y += 3;
+
+          if (h.y + h.size > canvas.height - basketHeight - 10 && h.x > basketX && h.x < basketX + basketWidth) {
+            hearts.splice(i, 1);
+            score++;
+          }
+        });
+
+        ctx.fillStyle = "#ff1493";
+        ctx.font = "20px Arial";
+        ctx.fillText("Puntaje: " + score, 10, 30);
+      }
+
+      setInterval(() => {
+        crearCorazon();
+      }, 1000);
+
+      function loop() {
+        dibujar();
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+  </script>
+</body>
+</html>
+
